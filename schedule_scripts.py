@@ -19,9 +19,11 @@ def run_long_function():
 # run_long_function()
 
 schedule = Scheduler()
-schedule.cyclic(dt.timedelta(seconds=2), run_long_function) 
 schedule.cyclic(dt.timedelta(weeks=1), run_long_function) 
 print(schedule)
+
+
+run_long_function()
 while True:
     schedule.exec_jobs()
     time.sleep(1)
